@@ -170,6 +170,13 @@
         installSetTimeoutImplementation();
     }
 
-    attachTo.setImmediate = setImmediate;
-    attachTo.clearImmediate = clearImmediate;
+    // We don't want to do this, too messy and impactful when the environment 
+    // is not your own.
+
+    // attachTo.setImmediate = setImmediate;
+    // attachTo.clearImmediate = clearImmediate;
+
+    module.exports.setImmediate = setImmediate;
+    module.exports.clearImmediate = clearImmediate;
+
 }(new Function("return this")()));
